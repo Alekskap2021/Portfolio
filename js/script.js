@@ -2,23 +2,23 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 	e.preventDefault();
 
 	//fixed menu animation
-	window.addEventListener(`scroll`, () => {
+	function setMenuAnimation() {
+		const clientW = document.documentElement.clientWidth,
+			menuW = +window.getComputedStyle(document.querySelector('.divider')).width.slice(0, -2);
 
-		if (window.pageYOffset > 0) {
-			document.querySelectorAll('.scroll-bg').forEach(item => item.style.display = `block`);
-			document.querySelectorAll('.divider').forEach(item => item.style.transform = `scaleX(2)`);
+		window.addEventListener(`scroll`, () => {
+			console.log((clientW / menuW).toFixed(2));
+			if (window.pageYOffset > 0) {
+				document.querySelectorAll('.scroll-bg').forEach(item => item.style.display = `block`);
+				document.querySelectorAll('.divider').forEach(item => item.style.transform = `scaleX(${(clientW/menuW).toFixed(2)})`);
+			} else {
+				document.querySelectorAll('.scroll-bg').forEach(item => item.style.display = `none`);
+				document.querySelectorAll('.divider').forEach(item => item.style.transform = ``);
+			}
+		});
+	}
 
-			// document.querySelector('.scroll-bg').style.display = `block`;
-			// document.querySelector('.divider').style.transform = `scaleX(2)`; 
-			//think about adaptive
-		} else {
-			document.querySelectorAll('.scroll-bg').forEach(item => item.style.display = `none`);
-			document.querySelectorAll('.divider').forEach(item => item.style.transform = ``);
-
-			// document.querySelector('.scroll-bg').style.display = `none`;
-			// document.querySelector('.divider').style.cssText = ``;
-		}
-	});
+	setMenuAnimation();
 	//
 
 	//function for get sections height
