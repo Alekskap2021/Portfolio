@@ -273,7 +273,7 @@ header.nav-menu .scroll-bg {
 .contacts-btn:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 footer {
@@ -289,13 +289,24 @@ footer-descr {
   margin: 0 auto;
 }
 
-.nav-menu-eng,
-.header-eng,
-.about-eng,
-.skills-eng,
-.portfolio-eng,
-.contacts-eng,
-.footer-eng {
-  display: none;
+.github-link {
+  display: block;
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 100;
+  background-color: black;
+  color: white;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+.github-link:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  opacity: 0.85;
 }
 /*# sourceMappingURL=style.css.map */
