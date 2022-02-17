@@ -9,11 +9,11 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 		window.addEventListener(`scroll`, () => {
 			console.log((clientW / menuW).toFixed(2));
 			if (window.pageYOffset > 0) {
-				document.querySelectorAll('.scroll-bg').forEach(item => item.style.display = `block`);
-				document.querySelectorAll('.divider').forEach(item => item.style.transform = `scaleX(${(clientW/menuW).toFixed(2)})`);
+				document.querySelector('.scroll-bg').style.display = `block`;
+				document.querySelector('.divider').style.transform = `scaleX(${(clientW/menuW).toFixed(2)})`;
 			} else {
-				document.querySelectorAll('.scroll-bg').forEach(item => item.style.display = `none`);
-				document.querySelectorAll('.divider').forEach(item => item.style.transform = ``);
+				document.querySelector('.scroll-bg').style.display = `none`;
+				document.querySelector('.divider').style.transform = ``;
 			}
 		});
 	}
@@ -48,19 +48,17 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 				clientH = document.documentElement.clientHeight,
 				scrollH = document.documentElement.scrollHeight,
 				sections = document.querySelectorAll('section');
+			console.log(footerH);
 
 
 			sections.forEach(section => {
-				if (window.getComputedStyle(section).display == `block`) {
-					if (section.getBoundingClientRect().y - fixedMenuH <= 0 || clientH + scrollTop >= scrollH - footerH) {
-
-						document.querySelectorAll('.nav-menu a').forEach(link => {
-							link.classList.remove(`active`);
-							if (section.getAttribute(`class`) == link.getAttribute(`data`)) {
-								link.classList.add(`active`);
-							}
-						});
-					}
+				if (section.getBoundingClientRect().y - fixedMenuH <= 0 || clientH + scrollTop >= scrollH - footerH) {
+					document.querySelectorAll('.nav-menu a').forEach(link => {
+						link.classList.remove(`active`);
+						if (section.getAttribute(`id`) == link.getAttribute(`data`)) {
+							link.classList.add(`active`);
+						}
+					});
 				}
 			});
 		}
@@ -114,27 +112,16 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 
 	//change language
 	function langActive() {
-		const langBtn = document.querySelectorAll('.lang span'),
-			sectionsArr = [];
-
-		for (let node of document.body.children) {
-			if (node.localName != `script`) {
-				sectionsArr.push(node);
-			}
-		}
+		const langBtn = document.querySelectorAll('.lang span');
 
 		langBtn.forEach(btn => {
 			btn.addEventListener(`click`, (e) => {
-				// debugger;
-
 				if (!e.target.classList.contains(`active`)) {
-					sectionsArr.forEach(node => {
-						if (window.getComputedStyle(node).display == `block`) {
-							node.style.display = `none`;
-						} else if (window.getComputedStyle(node).display == `none`) {
-							node.style.display = `block`;
-						}
-					});
+					if (e.target.classList.contains(`eng`)) {
+						document.location.href = 'index-eng.html';
+					} else {
+						document.location.href = 'index.html';
+					}
 				}
 			});
 		});
