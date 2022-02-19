@@ -128,4 +128,11 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 	}
 	langActive();
 	//
+
+	//Mobile-burger
+	document.querySelector('.mobile-burger').addEventListener(`click`, () => {
+		document.querySelector('.mobile-burger').classList.toggle(`mobile-active`);
+		document.querySelector('.menu').classList.toggle(`mobile-active`);
+	});
+	//
 });
