@@ -4,15 +4,15 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 	//fixed menu animation
 	function setMenuAnimation() {
 		const clientW = document.documentElement.clientWidth,
-			menuW = +window.getComputedStyle(document.querySelector('.divider')).width.slice(0, -2);
+			menuW = +window.getComputedStyle(document.querySelector('.menu')).width.slice(0, -2);
+		// after = window.getComputedStyle(document.querySelector('.menu'), ':after').height;
 
+		// console.log(this.dataset.divider);
 		window.addEventListener(`scroll`, () => {
-			console.log((clientW / menuW).toFixed(2));
+			// console.log((clientW / menuW).toFixed(2));
 			if (window.pageYOffset > 0) {
-				document.querySelector('.scroll-bg').style.display = `block`;
 				document.querySelector('.divider').style.transform = `scaleX(${(clientW/menuW).toFixed(2)})`;
 			} else {
-				document.querySelector('.scroll-bg').style.display = `none`;
 				document.querySelector('.divider').style.transform = ``;
 			}
 		});
@@ -36,19 +36,19 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 	//
 
 	//padding for anchor-link
-	document.querySelector('html').style.scrollPaddingTop = `${(getHeightStyle('.scroll-bg') - 1)}px`;
+	document.querySelector('html').style.scrollPaddingTop = `${(getHeightStyle('.menu') - 1)}px`;
 	//
 
 	//function for change menu-item styles
 	window.addEventListener(`scroll`, () => {
 		function changeMenuItem() {
-			const fixedMenuH = getHeightStyle(`.scroll-bg`),
+			const fixedMenuH = getHeightStyle(`.menu`),
 				footerH = getHeightStyle(`footer`),
 				scrollTop = window.pageYOffset,
 				clientH = document.documentElement.clientHeight,
 				scrollH = document.documentElement.scrollHeight,
 				sections = document.querySelectorAll('section');
-			console.log(footerH);
+			// console.log(footerH);
 
 
 			sections.forEach(section => {
