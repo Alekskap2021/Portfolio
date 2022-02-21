@@ -48,6 +48,7 @@ header.nav-menu {
 }
 
 header.nav-menu .menu {
+  --transform-menu-divider: scaleX(1);
   position: fixed;
   max-width: 940px;
   width: 100%;
@@ -55,8 +56,6 @@ header.nav-menu .menu {
   padding-top: 33px;
   top: 0;
   z-index: 1000;
-  -webkit-transition: 0.5s all;
-  transition: 0.5s all;
 }
 
 header.nav-menu .menu .menu-list {
@@ -82,23 +81,27 @@ header.nav-menu .menu .mobile-burger {
 
 header.nav-menu .menu:before {
   content: '';
-  width: 100vw;
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
-  left: -32%;
   background-color: #fff;
-  height: 100%;
-  opacity: 0.7;
+  opacity: 0.85;
+  -webkit-transform: var(--transform-menu-divider);
+          transform: var(--transform-menu-divider);
 }
 
-header.nav-menu .menu .divider {
+header.nav-menu .menu:after {
+  content: '';
   width: 100%;
   height: 1px;
-  border-top: 1px solid #828282;
+  background-color: #828282;
   position: absolute;
-  margin-top: 38px;
+  bottom: 0;
   -webkit-transition: 1s all;
   transition: 1s all;
+  -webkit-transform: var(--transform-menu-divider);
+          transform: var(--transform-menu-divider);
 }
 
 .header {
@@ -314,7 +317,9 @@ footer-descr {
 }
 
 @media (max-width: 940px) {
-  section {
+  section,
+  footer,
+  header.nav-menu .menu .menu-list {
     padding-right: 30px !important;
     padding-left: 30px !important;
   }
@@ -383,12 +388,6 @@ footer-descr {
     -webkit-transition: all 0.6s ease;
     transition: all 0.6s ease;
   }
-  header.nav-menu .menu .divider {
-    display: none;
-  }
-  .scroll-bg {
-    display: none;
-  }
   header.nav-menu .menu {
     position: fixed;
     right: -100%;
@@ -409,10 +408,29 @@ footer-descr {
   }
   header.nav-menu .menu .menu-list {
     display: block;
-    font-size: 34px;
+    font-size: 27px;
   }
   header.nav-menu .menu .menu-list li:not(:last-child) {
-    margin-bottom: 68px;
+    margin-bottom: 35px;
+  }
+  section.header {
+    padding: 61px 0 104px 0;
+  }
+  section.header .title-block {
+    margin-top: 0;
+    text-align: center;
+  }
+  section.header .title-block .lang {
+    display: none;
+  }
+  section.header .title-block h2.header-name,
+  section.header .title-block h1.header-descr {
+    position: static;
+    display: block;
+    width: 100%;
+  }
+  section.header .title-block h1.header-descr {
+    margin-top: 30px;
   }
 }
 /*# sourceMappingURL=style.css.map */

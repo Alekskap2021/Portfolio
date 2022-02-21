@@ -5,15 +5,12 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 	function setMenuAnimation() {
 		const clientW = document.documentElement.clientWidth,
 			menuW = +window.getComputedStyle(document.querySelector('.menu')).width.slice(0, -2);
-		// after = window.getComputedStyle(document.querySelector('.menu'), ':after').height;
 
-		// console.log(this.dataset.divider);
 		window.addEventListener(`scroll`, () => {
-			// console.log((clientW / menuW).toFixed(2));
 			if (window.pageYOffset > 0) {
-				document.querySelector('.divider').style.transform = `scaleX(${(clientW/menuW).toFixed(2)})`;
+				document.querySelector('.menu').style.setProperty(`--transform-menu-divider`, `scaleX(${(clientW / menuW).toFixed(3)})`);
 			} else {
-				document.querySelector('.divider').style.transform = ``;
+				document.querySelector('.menu').style.setProperty(`--transform-menu-divider`, `scaleX(1)`);
 			}
 		});
 	}
