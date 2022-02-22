@@ -47,6 +47,7 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 				scrollTop = window.pageYOffset,
 				clientH = document.documentElement.clientHeight,
 				scrollH = document.documentElement.scrollHeight,
+				clientW = document.documentElement.clientWidth,
 				sections = document.querySelectorAll('section');
 			// console.log(footerH);
 
@@ -133,6 +134,12 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 	document.querySelector('.mobile-burger').addEventListener(`click`, () => {
 		document.querySelector('.mobile-burger').classList.toggle(`mobile-active`);
 		document.querySelector('.menu').classList.toggle(`mobile-active`);
+
+		if (document.querySelector('.mobile-burger').classList.contains(`mobile-active`)) {
+			document.querySelector('body').style.overflow = `hidden`;
+		} else {
+			document.querySelector('body').style.overflow = ``;
+		}
 	});
 	//
 });

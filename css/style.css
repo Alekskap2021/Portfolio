@@ -83,7 +83,7 @@ header.nav-menu .menu .menu-list a {
   font-weight: 700;
 }
 
-header.nav-menu .menu .lang, header.nav-menu .menu .github-link {
+header.nav-menu .menu .lang, header.nav-menu .menu .github-link-mobile {
   display: none;
 }
 
@@ -312,12 +312,12 @@ footer-descr {
   text-decoration: none;
   padding: 12px 30px;
   border-radius: 30px;
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
   z-index: 100;
   background-color: black;
   color: white;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
 }
@@ -398,7 +398,7 @@ footer-descr {
     position: fixed;
     right: -100%;
     padding: 66px 28px 57px 28px;
-    width: 50%;
+    width: 100%;
     height: 100%;
     background-color: #fff;
     opacity: 0.95;
@@ -413,13 +413,18 @@ footer-descr {
     display: none;
   }
   header.nav-menu .menu .lang,
-  header.nav-menu .menu a.github-link {
+  header.nav-menu .menu a.github-link-mobile {
     position: absolute;
     display: inline-block;
   }
-  header.nav-menu .menu a.github-link {
-    bottom: 0;
-    min-width: 195px;
+  header.nav-menu .menu a.github-link-mobile {
+    display: block;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    z-index: 100;
+    background-color: black;
+    color: white;
     left: 50%;
     bottom: 57px;
     -webkit-transform: translateX(-50%);
@@ -433,8 +438,13 @@ footer-descr {
     bottom: 120px;
   }
   header.nav-menu .menu .menu-list {
+    text-align: center;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    position: absolute;
     display: block;
     font-size: 27px;
+    left: 50%;
   }
   header.nav-menu .menu .menu-list li:not(:last-child) {
     margin-bottom: 35px;
@@ -467,14 +477,17 @@ footer-descr {
   .skills-item {
     width: 100%;
   }
+}
+
+@media (max-width: 400px) {
   header.nav-menu .menu {
-    padding: 100px 10px 57px 10px;
+    padding: 66px 10px 57px 10px;
   }
   header.nav-menu .menu ul li {
     font-size: 18px;
   }
-  header.nav-menu .menu a.github-link {
-    min-width: 90%;
+  header.nav-menu .menu a.github-link-mobile {
+    padding: 12px 15px;
     text-align: center;
     bottom: 10px;
     font-size: 16px;
