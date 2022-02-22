@@ -4,13 +4,14 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 	//fixed menu animation
 	function setMenuAnimation() {
 		const clientW = document.documentElement.clientWidth,
-			menuW = +window.getComputedStyle(document.querySelector('.menu')).width.slice(0, -2);
+			menuW = +window.getComputedStyle(document.querySelector('.menu')).width.slice(0, -2),
+			menu = document.querySelector('.menu');
 
 		window.addEventListener(`scroll`, () => {
 			if (window.pageYOffset > 0) {
-				document.querySelector('.menu').style.setProperty(`--transform-menu-divider`, `scaleX(${(clientW / menuW).toFixed(3)})`);
+				menu.style.setProperty(`--transform-menu-divider`, `scaleX(${(clientW / menuW).toFixed(3)})`);
 			} else {
-				document.querySelector('.menu').style.setProperty(`--transform-menu-divider`, `scaleX(1)`);
+				menu.style.setProperty(`--transform-menu-divider`, `scaleX(1)`);
 			}
 		});
 	}
@@ -33,7 +34,9 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 	//
 
 	//padding for anchor-link
-	document.querySelector('html').style.scrollPaddingTop = `${(getHeightStyle('.menu') - 1)}px`;
+	if (document.documentElement.clientWidth > 767) {
+		document.querySelector('html').style.scrollPaddingTop = `${(getHeightStyle('.menu') - 1)}px`;
+	}
 	//
 
 	//function for change menu-item styles
