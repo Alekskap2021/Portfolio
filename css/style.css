@@ -119,6 +119,7 @@ header.nav-menu .mobile-burger {
 .header {
   padding: 32px 0 104px 0;
   text-align: center;
+  height: 100%;
   color: #070707;
 }
 
