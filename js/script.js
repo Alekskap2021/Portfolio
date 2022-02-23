@@ -50,6 +50,8 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 						link.classList.remove(`active`);
 						if (section.getAttribute(`id`) == link.getAttribute(`data`)) {
 							link.classList.add(`active`);
+						} else if (document.querySelector('.menu').classList.contains(`mobile-active`)) {
+							document.querySelector('.menu').classList.remove(`mobile-active`);
 						}
 					});
 				}
@@ -132,11 +134,11 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 		document.querySelector('.mobile-burger').classList.toggle(`mobile-active`);
 		document.querySelector('.menu').classList.toggle(`mobile-active`);
 
-		// if (document.querySelector('.mobile-burger').classList.contains(`mobile-active`)) {
-		// 	document.querySelector('body').style.overflow = `hidden`;
-		// } else {
-		// 	document.querySelector('body').style.overflow = ``;
-		// }
+		if (document.querySelector('.mobile-burger').classList.contains(`mobile-active`)) {
+			document.querySelector('body').style.overflow = `hidden`;
+		} else {
+			document.querySelector('body').style.overflow = ``;
+		}
 	});
 	//
 });
