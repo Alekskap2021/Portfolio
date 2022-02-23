@@ -148,7 +148,8 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 	if (document.documentElement.clientWidth < 767) {
 		document.querySelectorAll('section.portfolio a img').forEach(link => {
 			link.addEventListener(`click`, (e) => {
-				if (e.target.classList.contains(`not-adaptive`) && document.location.pathname == `/index.html`) {
+				console.log(e.target.getAttribute(`data-lang`));
+				if (e.target.classList.contains(`not-adaptive`) && e.target.getAttribute(`data-lang`)) {
 					const mobileConfirm = confirm(`Сайт, который вы пытаетесь посетить, не оптимизирован для мобильных устройств.
 					 Нажмите ОК, чтобы перейти`);
 					if (mobileConfirm == false) {
@@ -163,7 +164,6 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 			});
 		});
 	}
-	console.log(document.location.pathname == `/index.html`);
 	//
 
 });
