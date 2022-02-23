@@ -150,8 +150,7 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 			link.addEventListener(`click`, (e) => {
 				console.log(e.target.getAttribute(`data-lang`));
 				if (e.target.classList.contains(`not-adaptive`) && e.target.getAttribute(`data-lang`)) {
-					const mobileConfirm = confirm(`Сайт, который вы пытаетесь посетить, не оптимизирован для мобильных устройств.
-					 Нажмите ОК, чтобы перейти`);
+					const mobileConfirm = confirm(`Сайт, который вы пытаетесь посетить, не оптимизирован для мобильных устройств. Нажмите ОК, чтобы перейти`);
 					if (mobileConfirm == false) {
 						e.preventDefault();
 					}
