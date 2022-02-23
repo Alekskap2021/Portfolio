@@ -163,8 +163,13 @@ header.nav-menu .mobile-burger {
   cursor: pointer;
 }
 
-.header .header-img {
+.header .header-block-img {
   margin-top: 40px;
+  height: 600px;
+  overflow: hidden;
+}
+
+.header .header-block-img .header-img {
   width: 100%;
 }
 
@@ -457,7 +462,6 @@ footer-descr {
   }
   section.header .title-block {
     margin-top: 0;
-    text-align: center;
   }
   section.header .title-block .lang {
     display: none;
@@ -470,6 +474,9 @@ footer-descr {
   }
   section.header .title-block h1.header-descr {
     margin-top: 30px;
+  }
+  section.header .header-block-img {
+    height: auto;
   }
   a.github-link {
     display: none;
