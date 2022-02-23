@@ -408,7 +408,7 @@ footer-descr {
     right: -100%;
     padding: 66px 28px 57px 28px;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: #fff;
     opacity: 0.95;
     z-index: 0;
@@ -437,7 +437,7 @@ footer-descr {
     background-color: black;
     color: white;
     left: 50%;
-    bottom: 10%;
+    bottom: 57px;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
   }
@@ -446,7 +446,7 @@ footer-descr {
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
-    bottom: 20%;
+    bottom: 120px;
   }
   header.nav-menu .menu .menu-list {
     text-align: center;
@@ -499,11 +499,11 @@ footer-descr {
   header.nav-menu .menu a.github-link-mobile {
     padding: 12px 15px;
     text-align: center;
-    bottom: 8%;
+    bottom: 20px;
     font-size: 16px;
   }
   header.nav-menu .menu .lang {
-    bottom: 22%;
+    bottom: 93px;
   }
 }
 /*# sourceMappingURL=style.css.map */
