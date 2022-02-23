@@ -52,6 +52,8 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 							link.classList.add(`active`);
 						} else if (document.querySelector('.menu').classList.contains(`mobile-active`)) {
 							document.querySelector('.menu').classList.remove(`mobile-active`);
+							document.querySelector('.mobile-burger').classList.remove(`mobile-active`);
+							document.querySelector('body').style.overflow = ``;
 						}
 					});
 				}
@@ -141,4 +143,20 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 		}
 	});
 	//
+
+	//Confirm about not adaptive on mob
+	if (document.documentElement.clientWidth < 767) {
+		document.querySelectorAll('section.portfolio a img').forEach(link => {
+			link.addEventListener(`click`, (e) => {
+				if (e.target.classList.contains(`not-adaptive`)) {
+					const mobileConfirm = confirm(`Сайт не адаптирован под мобильные версиию Все равно перейти?`);
+					if (mobileConfirm == false) {
+						e.preventDefault();
+					}
+				}
+			});
+		});
+	}
+	//
+
 });
