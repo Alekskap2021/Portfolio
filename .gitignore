@@ -2,7 +2,7 @@
 
 # dependencies
 /scss
-/node_modules
+/food/node_modules
 
 # testing
 /coverage
