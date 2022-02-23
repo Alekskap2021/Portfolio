@@ -20,16 +20,9 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 	//
 
 	//function for get sections height
-	//maybe change on getBoundingClientRect()?
 	function getHeightStyle(elem) {
-
-		const h = +window.getComputedStyle(document.querySelector(elem)).height.slice(0, -2),
-			pt = +window.getComputedStyle(document.querySelector(elem)).paddingTop.slice(0, -2),
-			pb = +window.getComputedStyle(document.querySelector(elem)).paddingBottom.slice(0, -2),
-			mt = +window.getComputedStyle(document.querySelector(elem)).marginTop.slice(0, -2),
-			mb = +window.getComputedStyle(document.querySelector(elem)).marginBottom.slice(0, -2);
-
-		return (h + pt + pb + mt + mb);
+		const h = +window.getComputedStyle(document.querySelector(elem)).height.slice(0, -2);
+		return h;
 	}
 	//
 
@@ -41,7 +34,7 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 
 	//function for change menu-item styles
 	window.addEventListener(`scroll`, () => {
-		function changeMenuItem() {
+		function changeMenuItem(menu) {
 			const fixedMenuH = getHeightStyle(`.menu`),
 				footerH = getHeightStyle(`footer`),
 				scrollTop = window.pageYOffset,
@@ -49,11 +42,10 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 				scrollH = document.documentElement.scrollHeight,
 				clientW = document.documentElement.clientWidth,
 				sections = document.querySelectorAll('section');
-			// console.log(footerH);
 
 
 			sections.forEach(section => {
-				if (section.getBoundingClientRect().y - fixedMenuH <= 0 || clientH + scrollTop >= scrollH - footerH) {
+				if (section.getBoundingClientRect().y - menu <= 0 || clientH + scrollTop >= scrollH - footerH) {
 					document.querySelectorAll('.nav-menu a').forEach(link => {
 						link.classList.remove(`active`);
 						if (section.getAttribute(`id`) == link.getAttribute(`data`)) {
@@ -63,7 +55,12 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 				}
 			});
 		}
-		changeMenuItem();
+		if (document.documentElement.clientWidth > 767) {
+			changeMenuItem(getHeightStyle(`.menu`));
+		} else {
+			changeMenuItem(1);
+		}
+
 	});
 
 	//constructor to quickly add and change skills cards
@@ -135,11 +132,11 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 		document.querySelector('.mobile-burger').classList.toggle(`mobile-active`);
 		document.querySelector('.menu').classList.toggle(`mobile-active`);
 
-		if (document.querySelector('.mobile-burger').classList.contains(`mobile-active`)) {
-			document.querySelector('body').style.overflow = `hidden`;
-		} else {
-			document.querySelector('body').style.overflow = ``;
-		}
+		// if (document.querySelector('.mobile-burger').classList.contains(`mobile-active`)) {
+		// 	document.querySelector('body').style.overflow = `hidden`;
+		// } else {
+		// 	document.querySelector('body').style.overflow = ``;
+		// }
 	});
 	//
 });
