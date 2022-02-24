@@ -137,13 +137,15 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 	//
 
 	//Mobile-burger
-	document.querySelector('.mobile-burger').addEventListener(`click`, () => {
+	document.querySelector('.mobile-burger').addEventListener(`click`, (e) => {
+		e.preventDefault();
+
 		document.querySelector('.mobile-burger').classList.toggle(`mobile-active`);
 		document.querySelector('.menu').classList.toggle(`mobile-active`);
 
 		if (document.querySelector('.mobile-burger').classList.contains(`mobile-active`)) {
 			document.querySelector('body').style.overflow = `hidden`;
-			window.addEventListener(`touchmove`, (e) => {
+			document.addEventListener(`touchmove`, (e) => {
 				e.preventDefault();
 			});
 		} else {
