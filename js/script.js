@@ -15,7 +15,6 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 			}
 		});
 	}
-
 	setMenuAnimation();
 	//
 
@@ -63,7 +62,6 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 			});
 		});
 	}
-
 
 	if (document.documentElement.clientWidth > 767) {
 		changeMenuItem(getHeightStyle(`.menu`));
@@ -117,35 +115,15 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 	}
 	skills();
 
-	//change language
-	function langActive() {
-		const langBtn = document.querySelectorAll('.lang span');
-
-		langBtn.forEach(btn => {
-			btn.addEventListener(`click`, (e) => {
-				if (!e.target.classList.contains(`active`)) {
-					if (e.target.classList.contains(`eng`)) {
-						document.location.href = 'index-eng.html';
-					} else {
-						document.location.href = 'index.html';
-					}
-				}
-			});
-		});
-	}
-	langActive();
-	//
-
 	//Mobile-burger
 	document.querySelector('.mobile-burger').addEventListener(`click`, (e) => {
-		e.preventDefault();
 
 		document.querySelector('.mobile-burger').classList.toggle(`mobile-active`);
 		document.querySelector('.menu').classList.toggle(`mobile-active`);
 
 		if (document.querySelector('.mobile-burger').classList.contains(`mobile-active`)) {
 			document.querySelector('body').style.overflow = `hidden`;
-			document.addEventListener(`touchmove`, (e) => {
+			document.querySelector('.menu').addEventListener(`touchmove`, (e) => {
 				e.preventDefault();
 			});
 		} else {

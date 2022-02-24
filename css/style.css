@@ -160,7 +160,12 @@ header.nav-menu .mobile-burger {
   cursor: default;
 }
 
-.header .title-block .lang span.ru, .header .title-block .lang span.eng:hover {
+.header .title-block .lang a {
+  text-decoration: none;
+  color: #828282;
+}
+
+.header .title-block .lang a.ru, .header .title-block .lang a.eng:hover {
   cursor: pointer;
 }
 
@@ -462,6 +467,10 @@ footer-descr {
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
     bottom: 120px;
+  }
+  header.nav-menu .menu .lang a {
+    text-decoration: none;
+    color: #828282;
   }
   header.nav-menu .menu .menu-list {
     text-align: center;
