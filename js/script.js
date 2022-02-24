@@ -33,39 +33,44 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 	//
 
 	//function for change menu-item styles
-	window.addEventListener(`scroll`, () => {
-		function changeMenuItem(menu) {
-			const fixedMenuH = getHeightStyle(`.menu`),
-				footerH = getHeightStyle(`footer`),
+	function changeMenuItem(menu) { //where menu is the height of the fixed menu
+		window.addEventListener(`scroll`, () => {
+			const footerH = getHeightStyle(`footer`),
 				scrollTop = window.pageYOffset,
 				clientH = document.documentElement.clientHeight,
 				scrollH = document.documentElement.scrollHeight,
-				clientW = document.documentElement.clientWidth,
 				sections = document.querySelectorAll('section');
 
 
-			sections.forEach(section => {
+			sections.forEach(section => { //switch active class on link
 				if (section.getBoundingClientRect().y - menu <= 0 || clientH + scrollTop >= scrollH - footerH) {
 					document.querySelectorAll('.nav-menu a').forEach(link => {
 						link.classList.remove(`active`);
 						if (section.getAttribute(`id`) == link.getAttribute(`data`)) {
 							link.classList.add(`active`);
-						} else if (document.querySelector('.menu').classList.contains(`mobile-active`)) {
-							document.querySelector('.menu').classList.remove(`mobile-active`);
-							document.querySelector('.mobile-burger').classList.remove(`mobile-active`);
-							document.querySelector('body').style.overflow = ``;
 						}
 					});
 				}
 			});
-		}
-		if (document.documentElement.clientWidth > 767) {
-			changeMenuItem(getHeightStyle(`.menu`));
-		} else {
-			changeMenuItem(1);
-		}
+		});
+		document.querySelectorAll('.nav-menu a').forEach(link => { //close menu on link click
+			link.addEventListener(`click`, () => {
+				if (document.querySelector('.menu').classList.contains(`mobile-active`)) {
+					document.querySelector('.menu').classList.remove(`mobile-active`);
+					document.querySelector('.mobile-burger').classList.remove(`mobile-active`);
+					document.querySelector('body').style.overflow = ``;
+				}
+			});
+		});
+	}
 
-	});
+
+	if (document.documentElement.clientWidth > 767) {
+		changeMenuItem(getHeightStyle(`.menu`));
+	} else {
+		changeMenuItem(1);
+	}
+
 
 	//constructor to quickly add and change skills cards
 	function skills() {
@@ -138,6 +143,9 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 
 		if (document.querySelector('.mobile-burger').classList.contains(`mobile-active`)) {
 			document.querySelector('body').style.overflow = `hidden`;
+			window.addEventListener(`touchmove`, (e) => {
+				e.preventDefault();
+			});
 		} else {
 			document.querySelector('body').style.overflow = ``;
 		}
