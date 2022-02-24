@@ -43,7 +43,7 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 
 			sections.forEach(section => { //switch active class on link
 				if (section.getBoundingClientRect().y - menu <= 0 || clientH + scrollTop >= scrollH - footerH) {
-					document.querySelectorAll('.nav-menu a').forEach(link => {
+					document.querySelectorAll('.nav-menu .menu-list a').forEach(link => {
 						link.classList.remove(`active`);
 						if (section.getAttribute(`id`) == link.getAttribute(`data`)) {
 							link.classList.add(`active`);
@@ -118,8 +118,21 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 	// langBtn
 	document.querySelectorAll('.lang a').forEach(link => { //do not reload the page when selecting the same language
 		link.addEventListener(`click`, (e) => {
-			if (e.target.classList.contains(`active`)) {
-				e.preventDefault();
+
+			function linkDelay() {
+				if (e.target.classList.contains(`active`)) {
+					e.preventDefault();
+				} else if (!e.target.classList.contains(`active`) && e.target.classList.contains(`ru`)) {
+					document.location.href = `index.html`;
+				} else {
+					document.location.href = `index-eng.html`;
+				}
+			}
+
+			if (document.documentElement.clientWidth < 767) {
+				setTimeout(linkDelay, 600);
+			} else {
+				linkDelay();
 			}
 		});
 	});
