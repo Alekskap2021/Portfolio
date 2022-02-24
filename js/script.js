@@ -115,6 +115,16 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 	}
 	skills();
 
+	// langBtn
+	document.querySelectorAll('.lang a').forEach(link => { //do not reload the page when selecting the same language
+		link.addEventListener(`click`, (e) => {
+			if (e.target.classList.contains(`active`)) {
+				e.preventDefault();
+			}
+		});
+	});
+	//
+
 	//Mobile-burger
 	document.querySelector('.mobile-burger').addEventListener(`click`, (e) => {
 
