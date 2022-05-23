@@ -1,0 +1,141 @@
+body {
+  background-color: #eee;
+}
+.keyboard {
+  text-align: initial;
+  align-items: initial;
+  margin: 0 10%;
+  width: 80%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+}
+
+.q-p,
+.a-l,
+.z-m,
+.num,
+.funcKey {
+  display: flex;
+  padding: 20;
+  justify-content: space-between;
+}
+
+p {
+  background-color: white;
+  display: block;
+  width: 15px;
+  height: 15px;
+  font-size: 14px;
+  margin: 0;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10%;
+}
+
+.func {
+  width: initial;
+}
+
+.keyShiftLeft,
+.keyShiftRight {
+  width: 70px;
+}
+
+.keyDelete {
+  width: 50px;
+}
+
+.keyEnter {
+  width: 50px;
+}
+
+.keyTab {
+  width: 40px;
+}
+
+.keySpace {
+  width: 400px;
+}
+
+.numpad {
+  margin-left: 100px;
+  display: block;
+  position: relative;
+}
+
+.one-three,
+.four-six,
+.seven-nine,
+.numpadFunc,
+.null {
+  display: flex;
+  padding: 20;
+  text-align: center;
+  vertical-align: center;
+}
+
+.keyNumInsert {
+  width: 60px;
+}
+
+.keyNumpadEnter {
+  width: 35px;
+  height: 80px;
+  position: absolute;
+  right: 0px;
+  text-align: center;
+  box-sizing: border-box;
+  /* padding: auto 0; */
+  padding-top: 18%;
+  padding-left: 1%;
+  padding-right: 1%;
+  line-height: 1;
+}
+
+.keyPlus {
+  height: 60px;
+  position: absolute;
+  right: 0;
+  width: 15px;
+  box-sizing: border-box;
+  width: 35px;
+  height: 80px;
+  padding-top: 18%;
+}
+
+.keyNumNumLock {
+  box-sizing: border-box;
+  width: 35px;
+  height: 35px;
+  padding: 3px;
+}
+
+.active {
+  background: #82b21e;
+}
+
+.info {
+  display: flex;
+  width: 80%;
+  margin: 0 10%;
+  justify-content: space-between;
+}
+
+.info .notice ul {
+  padding: 0;
+}
+
+.notice {
+  margin-bottom: 15px;
+}
+
+.numInfo {
+  text-align: left;
+  margin-top: 65px;
+  width: 170px;
+  margin-left: 100px;
+  margin-bottom: 15px;
+}

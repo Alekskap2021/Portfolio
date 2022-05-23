@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="keyboard">
+      <div class="left-block">
+        <div class="info">
+          <div class="notice">
+            <h2>Нюансы:</h2>
+            <ul>
+              <li>
+                При нажатии Tab фокус переключается на адресную строку и keyup
+                не срабатывает до момента нажатия след. клавиши
+              </li>
+              <li>
+                При нажатии любого из Alt происходит магическое залипание и
+                клавиши перестают работать. Решается кликом в любом месте
+              </li>
+              <li>
+                Все работает только при включенной английской раскладке
+                клавиатуры
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="num">
+          <p class="key key`">`</p>
+          <p class="key key1">1</p>
+          <p class="key key2">2</p>
+          <p class="key key3">3</p>
+          <p class="key key4">4</p>
+          <p class="key key5">5</p>
+          <p class="key key6">6</p>
+          <p class="key key7">7</p>
+          <p class="key key8">8</p>
+          <p class="key key9">9</p>
+          <p class="key key0">0</p>
+          <p class="key keyMinus">-</p>
+          <p class="key key=">=</p>
+          <p class="func key keyBackspace">Delete</p>
+        </div>
+
+        <!-- <br /> -->
+
+        <div class="q-p">
+          <p class="func key keyTab">Tab</p>
+          <p class="key keyQ">q</p>
+          <p class="key keyW">w</p>
+          <p class="key keyE">e</p>
+          <p class="key keyR">r</p>
+          <p class="key keyT">t</p>
+          <p class="key keyY">y</p>
+          <p class="key keyU">u</p>
+          <p class="key keyI">i</p>
+          <p class="key keyO">o</p>
+          <p class="key keyP">p</p>
+          <p class="key key[">[</p>
+          <p class="key key]">]</p>
+          <p class="key key\">\</p>
+        </div>
+
+        <!-- <br /> -->
+
+        <div class="a-l">
+          <p class="func key keyCapsLock">Caps&nbspLock</p>
+          <p class="key keyA">a</p>
+          <p class="key keyS">s</p>
+          <p class="key keyD">d</p>
+          <p class="key keyF">f</p>
+          <p class="key keyG">g</p>
+          <p class="key keyH">h</p>
+          <p class="key keyJ">j</p>
+          <p class="key keyK">k</p>
+          <p class="key keyL">l</p>
+          <p class="key key;">;</p>
+          <p class="key key'">'</p>
+          <p class="func key keyEnter">Enter</p>
+        </div>
+
+        <!-- <br /> -->
+
+        <div class="z-m">
+          <p class="func key keyShiftLeft key16">Shift</p>
+          <p class="key keyZ">z</p>
+          <p class="key keyX">x</p>
+          <p class="key keyC">c</p>
+          <p class="key keyV">v</p>
+          <p class="key keyB">b</p>
+          <p class="key keyN">n</p>
+          <p class="key keyM">m</p>
+          <p class="key key,">,</p>
+          <p class="key key.">.</p>
+          <p class="key keySlash">/</p>
+          <p class="func key keyShiftRight key16">Shift</p>
+        </div>
+
+        <!-- <br /> -->
+
+        <div class="funcKey">
+          <p class="func key keyControlLeft key17">Ctrl</p>
+          <p class="func key keyAltLeft">Alt</p>
+          <p class="func key key32 keySpace">Space</p>
+          <p class="func key keyAltRight">Alt</p>
+          <p class="func key keyControlRight">Ctrl</p>
+        </div>
+      </div>
+
+      <div class="right-block">
+        <div class="numInfo">
+          <span>
+            Обрати внимание, отображение клавиш зависит от того, включен NumPad
+            или нет. Так уж работает клавиатура.
+          </span>
+        </div>
+
+        <div class="numpad">
+          <div class="numpadFunc">
+            <p class="key keyNumNumLock">Num Lock</p>
+            <p class="key keyNum111">/</p>
+            <p class="key keyNum*">*</p>
+            <p class="key keyNum109">-</p>
+          </div>
+
+          <div class="seven-nine">
+            <p class="key keyNumHome">7</p>
+            <p class="key keyNumArrowUp">8</p>
+            <p class="key keyNumPageUp">9</p>
+            <p class="func key key+ keyPlus">+</p>
+          </div>
+
+          <div class="four-six">
+            <p class="key keyNumArrowLeft">4</p>
+            <p class="key keyNumClear">5</p>
+            <p class="key keyNumArrowRight">6</p>
+          </div>
+
+          <div class="one-three">
+            <p class="key keyNumEnd">1</p>
+            <p class="key keyNumArrowDown">2</p>
+            <p class="key keyNumPageDown">3</p>
+            <p class="func key keyNumpadEnter">Enter</p>
+          </div>
+
+          <div class="null">
+            <p class="func key keyNumInsert">0</p>
+            <p class="key keyNumDelete">.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
