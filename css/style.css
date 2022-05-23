@@ -41,6 +41,7 @@ html {
 }
 
 .container {
+  position: relative;
   max-width: 940px;
   margin: 0 auto;
 }
@@ -253,6 +254,7 @@ header.nav-menu .mobile-burger {
 }
 .next-btn-wrap,
 .prev-btn-wrap {
+  z-index: 10;
   cursor: pointer;
   position: absolute;
   width: 40px;
@@ -296,10 +298,10 @@ header.nav-menu .mobile-burger {
   transition: 0.3s all;
 }
 .next-btn-wrap {
-  right: 10%;
+  right: -5%;
 }
 .prev-btn-wrap {
-  left: 10%;
+  left: -5%;
 }
 .next-btn span {
   transform-origin: center;

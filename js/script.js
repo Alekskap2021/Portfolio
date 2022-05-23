@@ -111,9 +111,13 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
     }
 
     new skillsCard("img/icons/jsps.png", "JS", "JavaScript", ".skills .skills-wrapper").render(3);
-    new skillsCard("img/icons/reactps.png", "React", "React JS", ".skills .skills-wrapper").render(0);
+    new skillsCard("img/icons/reactps.png", "React", "React JS", ".skills .skills-wrapper").render(1);
     new skillsCard("img/icons/htmlps.png", "html", "HTML", ".skills .skills-wrapper").render(4);
-    new skillsCard("img/icons/cssps.png", "cssps", "CSS", ".skills .skills-wrapper").render(4);
+    new skillsCard("img/icons/cssps.png", "css", "CSS", ".skills .skills-wrapper").render(4);
+    new skillsCard("img/icons/bootstrap.png", "bootstrap", "Bootstrap", ".skills .skills-wrapper").render(3);
+    new skillsCard("img/icons/vue.png", "vue", "Vue JS", ".skills .skills-wrapper").render(2);
+    new skillsCard("img/icons/git.png", "git", "Git", ".skills .skills-wrapper").render(3);
+    new skillsCard("img/icons/sass.png", "sass", "Sass/Scss", ".skills .skills-wrapper").render(4);
   }
   skills();
 
@@ -186,6 +190,9 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
   console.log(slidesList);
   portfolioInner.style.width = 100 * slidesList.length + `%`;
 
+  slidesList.forEach((slide) => {
+    slide.style.width = width;
+  });
   next.addEventListener(`click`, () => {
     if (offset == width * (slidesList.length - 1)) {
       offset = 0;
@@ -201,7 +208,6 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
     } else {
       offset -= width;
     }
-    // offset -= width;
     portfolioInner.style.transform = `translateX(-${offset}px)`;
   });
 });
