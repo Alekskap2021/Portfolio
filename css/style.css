@@ -273,13 +273,15 @@ header.nav-menu .mobile-burger {
 .swiper .swiper-pagination-fraction {
   bottom: 0;
 }
-.swipe-ico {
+.slide-ico {
   display: none;
+  width: 20px;
+  height: 20px;
+  left: 30px;
+  text-align: center;
   margin-top: 20px;
-}
-.swipe-ico img {
-  width: 32px;
-  height: 32px;
+  /* margin: 20px auto 20px auto; */
+  position: absolute;
 }
 .portfolio-work {
   /* padding: 0 50px 0 50px; */
@@ -395,8 +397,11 @@ footer-descr {
   .swiper .swiper-button-prev {
     display: none;
   }
-  .swipe-ico {
+  .slide-ico {
     display: block;
+  }
+  .portfolio-work img {
+    box-shadow: none;
   }
 }
 @media (max-width: 940px) {

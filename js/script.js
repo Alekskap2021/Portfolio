@@ -164,7 +164,6 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
   if (document.documentElement.clientWidth < 767) {
     document.querySelectorAll("section.portfolio a img").forEach((link) => {
       link.addEventListener(`click`, (e) => {
-        console.log(e.target.getAttribute(`data-lang`));
         if (e.target.classList.contains(`not-adaptive`) && e.target.getAttribute(`data-lang`)) {
           const mobileConfirm = confirm(`Сайт, который вы пытаетесь посетить, не оптимизирован для мобильных устройств. Нажмите ОК, чтобы перейти`);
           if (mobileConfirm == false) {
@@ -199,4 +198,46 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
       prevEl: ".swiper-button-prev",
     },
   });
+  //
+  //window.pageYOffset - сколько прокрутили сверху
+  //document.documentElement.clientHeight - высота клиента
+  // document.documentElement.scrollHeight - высота всей страницы
+  //getBoundingClientRect().y - высота элемента до верха клиента
+  const ico = document.querySelector(`.slide-ico`);
+  setInterval(() => {
+    animate();
+  }, 1000);
+  function animate() {
+    if (window.getComputedStyle(ico).left == `30px`) {
+      ico.style.cssText = `
+	  left: 150px;
+	transition: all 0.5s ease;
+	  opacity: 0;
+	  `;
+    } else {
+      ico.style.cssText = `
+	  left: 30px;
+	  transition: opacity 0.5s ease;
+	  opacity: 1;
+	  `;
+    }
+  }
+  //   document.addEventListener(`scroll`, () => {
+  //     if (ico.getBoundingClientRect().y <= document.documentElement.clientHeight / 2 && ico.getBoundingClientRect().y >= 0) {
+  //         document.addEventListener(`scroll`, animate);
+  //     }
+  //   });
+  //   function animate() {
+  //     ico.style.cssText = `
+  // 	 left: 150px;
+  // 	 opacity: 0;
+  // 	`;
+  //     if (ico.getBoundingClientRect().y <= 0) {
+  //       ico.style.cssText = `
+  // 	 left: 30px;
+  // 	 opacity: 1;
+  // 	`;
+  //       document.removeEventListener(`scroll`, animate);
+  //     }
+  //   }
 });
