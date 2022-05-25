@@ -15,6 +15,7 @@
     <link type="image/png" sizes="192x192" rel="icon" href="img/icons/android-chrome-192x192.png" />
     <link type="image/png" sizes="512x512" rel="icon" href="img/icons/android-chrome-512x512.png" />
     <link rel="manifest" href="img/icons/site.webmanifest" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
   </head>
   <body>
     <header class="nav-menu">
@@ -83,13 +84,49 @@
       </div>
     </section>
 
-    <section class="portfolio" id="portfolio">
+    <!-- <section class="portfolio" id="portfolio">
       <div class="container">
         <h2 class="portfolio-title title">Portfolio</h2>
         <div class="portfolio-work">
           <a href="food/index.html" class="portfolio-work-link"><img src="img/food.jpg" alt="Food" class="portfolio-work-img not-adaptive" /></a>
           <div class="portfolio-work-descr">This work was done using native JavaScript, ES6 modules and WebPack!</div>
         </div>
+      </div>
+    </section> -->
+    <section class="portfolio" id="portfolio">
+      <h2 class="portfolio-title title">Portfolio</h2>
+      <div class="swipe-ico"><img src="img/icons/swipe.png" alt="swipe-ico" /></div>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="portfolio-work">
+              <a href="food/index.html" class="portfolio-work-link"><img src="img/food.jpg" alt="Food" class="portfolio-work-img not-adaptive" /></a>
+              <div class="portfolio-work-descr">This work was done using native JavaScript, ES6 modules and WebPack!</div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="portfolio-work">
+              <a href="onva/index.html" class="portfolio-work-link"><img src="img/onvaps.png" alt="Onva" /></a>
+              <div class="portfolio-work-descr">
+                An example of a personal account Web application associated with a financial exchange. Work exclusively on HTML & CSS. Used Bootstrap
+                Grid Library.
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="portfolio-work">
+              <a href="Keyboard/index.html" class="portfolio-work-link"
+                ><img src="img/keyboard.png" alt="keyboard" class="portfolio-work-img not-adaptive" data-lang="ru"
+              /></a>
+              <div class="portfolio-work-descr">
+                First experience with Event listener and Event object. Keyboard emulation on the screen. Written in native Js.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </div>
     </section>
 
@@ -111,6 +148,7 @@
 
     <a href="https://github.com/Alekskap2021/portfolio.git" class="github-link">Project on GitHub</a>
 
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

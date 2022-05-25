@@ -170,6 +170,8 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
           if (mobileConfirm == false) {
             e.preventDefault();
           }
+        } else if (!e.target.classList.contains(`not-adaptive`)) {
+          return;
         } else {
           const mobileConfirm = confirm(`The site you are trying to visit is not mobile friendly. Click ok to go`);
           if (mobileConfirm == false) {
@@ -180,34 +182,21 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
     });
   }
   //
-  const next = document.querySelector(".next-btn-wrap"),
-    prev = document.querySelector(".prev-btn-wrap"),
-    slidesList = document.querySelectorAll(".portfolio-work"),
-    portfolioInner = document.querySelector(".portfolio-inner"),
-    portfolioW = document.querySelector(".portfolio-wrapper"),
-    width = portfolioW.offsetWidth;
-  let offset = 0;
-  console.log(slidesList);
-  portfolioInner.style.width = 100 * slidesList.length + `%`;
+  new Swiper(".swiper", {
+    // Optional parameters
+    loop: true,
 
-  slidesList.forEach((slide) => {
-    slide.style.width = width;
-  });
-  next.addEventListener(`click`, () => {
-    if (offset == width * (slidesList.length - 1)) {
-      offset = 0;
-    } else {
-      offset += width;
-    }
-    portfolioInner.style.transform = `translateX(-${offset}px)`;
-  });
+    // If we need pagination
+    pagination: {
+      el: ".swiper-pagination",
+      type: `bullets`,
+      dynamicBullets: true,
+    },
 
-  prev.addEventListener(`click`, () => {
-    if (offset == 0) {
-      offset = width * (slidesList.length - 1);
-    } else {
-      offset -= width;
-    }
-    portfolioInner.style.transform = `translateX(-${offset}px)`;
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
   });
 });

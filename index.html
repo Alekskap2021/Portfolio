@@ -15,6 +15,7 @@
     <link type="image/png" sizes="192x192" rel="icon" href="img/icons/android-chrome-192x192.png" />
     <link type="image/png" sizes="512x512" rel="icon" href="img/icons/android-chrome-512x512.png" />
     <link rel="manifest" href="img/icons/site.webmanifest" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
   </head>
   <body>
     <header class="nav-menu">
@@ -86,29 +87,28 @@
     </section>
 
     <section class="portfolio" id="portfolio">
-      <div class="container">
-        <div class="next-btn-wrap">
-          <div class="next-btn"><span></span></div>
-        </div>
-        <div class="prev-btn-wrap">
-          <div class="prev-btn"><span></span></div>
-        </div>
-        <h2 class="portfolio-title title">Портфолио</h2>
-        <div class="portfolio-wrapper">
-          <div class="portfolio-inner">
+      <h2 class="portfolio-title title">Портфолио</h2>
+      <div class="swipe-ico"><img src="img/icons/swipe.png" alt="swipe-ico" /></div>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
             <div class="portfolio-work">
               <a href="food/index.html" class="portfolio-work-link"
                 ><img src="img/food.jpg" alt="Food" data-lang="ru" class="portfolio-work-img not-adaptive"
               /></a>
               <div class="portfolio-work-descr">Эта работа была выполнена с использованием нативного JavaScript, модулей ES6 и WebPack</div>
             </div>
+          </div>
+          <div class="swiper-slide">
             <div class="portfolio-work">
-              <a href="onva/index.html" class="portfolio-work-link"><img src="img/onva.png" alt="Onva" data-lang="ru" /></a>
+              <a href="onva/index.html" class="portfolio-work-link"><img src="img/onvaps.png" alt="Onva" /></a>
               <div class="portfolio-work-descr">
                 Пример личного кабинета Web-приложения, связанного с финансовой биржей. Работа исключительно по верстке. Использована Библиотека
                 Bootstrap Grid.
               </div>
             </div>
+          </div>
+          <div class="swiper-slide">
             <div class="portfolio-work">
               <a href="Keyboard/index.html" class="portfolio-work-link"
                 ><img src="img/keyboard.png" alt="keyboard" class="portfolio-work-img not-adaptive" data-lang="ru"
@@ -119,6 +119,9 @@
             </div>
           </div>
         </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </div>
     </section>
 
@@ -141,10 +144,7 @@
 
     <a href="https://github.com/Alekskap2021/portfolio.git" class="github-link">Проект на GitHub</a>
 
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
-
-<!--
-ux/ui interface
--->
