@@ -202,40 +202,22 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
   // document.documentElement.scrollHeight - высота всей страницы
   //getBoundingClientRect().y - высота элемента до верха клиента
   const ico = document.querySelector(`.slide-ico`);
-  setInterval(() => {
+  const timer = setInterval(() => {
     animate();
-  }, 1000);
+  }, 900);
   function animate() {
     if (window.getComputedStyle(ico).left == `30px`) {
       ico.style.cssText = `
-	  left: 150px;
-	transition: all 0.5s ease;
-	  opacity: 0;
-	  `;
-    } else {
+      left: 150px;
+    transition: all 0.5s ease;
+      opacity: 0;
+      `;
+    } else if (window.getComputedStyle(ico).left == `150px`) {
       ico.style.cssText = `
-	  left: 30px;
-	  transition: opacity 0.5s ease;
-	  opacity: 1;
-	  `;
+      left: 30px;
+      transition: opacity 0.5s ease;
+      opacity: 1;
+      `;
     }
   }
-  //   document.addEventListener(`scroll`, () => {
-  //     if (ico.getBoundingClientRect().y <= document.documentElement.clientHeight / 2 && ico.getBoundingClientRect().y >= 0) {
-  //         document.addEventListener(`scroll`, animate);
-  //     }
-  //   });
-  //   function animate() {
-  //     ico.style.cssText = `
-  // 	 left: 150px;
-  // 	 opacity: 0;
-  // 	`;
-  //     if (ico.getBoundingClientRect().y <= 0) {
-  //       ico.style.cssText = `
-  // 	 left: 30px;
-  // 	 opacity: 1;
-  // 	`;
-  //       document.removeEventListener(`scroll`, animate);
-  //     }
-  //   }
 });
