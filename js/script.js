@@ -164,12 +164,14 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
   if (document.documentElement.clientWidth < 767) {
     document.querySelectorAll("section.portfolio a img").forEach((link) => {
       link.addEventListener(`click`, (e) => {
-        if (e.currentTarget.classList.contains(`not-adaptive`) && e.currentTarget.getAttribute(`data-lang`) == `ru`) {
+        // e.preventDefault();
+        // console.log(e.target.classList.contains(`not-adaptive`));
+        if (e.target.classList.contains(`not-adaptive`) && e.target.classList.contains(`ru`)) {
           const mobileConfirm = confirm(`Сайт, который вы пытаетесь посетить, не оптимизирован для мобильных устройств. Нажмите ОК, чтобы перейти`);
           if (mobileConfirm == false) {
             e.preventDefault();
           }
-        } else if (e.currentTarget.classList.contains(`not-adaptive`) && e.currentTarget.getAttribute(`data-lang`) == `eng`) {
+        } else if (e.target.classList.contains(`not-adaptive`) && e.target.classList.contains(`eng`)) {
           const mobileConfirm = confirm(`The site you are trying to visit is not mobile friendly. Click ok to go`);
           if (mobileConfirm == false) {
             e.preventDefault();
