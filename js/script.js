@@ -161,28 +161,28 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
   //
 
   //Confirm about not adaptive on mob
-  if (document.documentElement.clientWidth < 767) {
-    document.querySelectorAll("section.portfolio a").forEach((link) => {
-      link.addEventListener(`click`, (e) => {
-        if (e.currentTarget.classList.contains(`not-adaptive`) && e.currentTarget.classList.contains(`ru`)) {
-          const mobileConfirm = confirm(`Сайт, который вы пытаетесь посетить, не оптимизирован для мобильных устройств. Нажмите ОК, чтобы перейти`);
-          if (mobileConfirm == false) {
-            e.preventDefault();
-          }
-        } else if (e.currentTarget.classList.contains(`not-adaptive`) && e.currentTarget.classList.contains(`eng`)) {
-          const mobileConfirm = confirm(`The site you are trying to visit is not mobile friendly. Click ok to go`);
-          if (mobileConfirm == false) {
-            e.preventDefault();
-          }
-        }
-        return false;
-      });
-    });
-  }
+  //   if (document.documentElement.clientWidth < 767) {
+  //     document.querySelectorAll("section.portfolio a").forEach((link) => {
+  //       link.addEventListener(`click`, (e) => {
+  //         if (e.currentTarget.classList.contains(`not-adaptive`) && e.currentTarget.classList.contains(`ru`)) {
+  //           const mobileConfirm = confirm(`Сайт, который вы пытаетесь посетить, не оптимизирован для мобильных устройств. Нажмите ОК, чтобы перейти`);
+  //           if (mobileConfirm == false) {
+  //             e.preventDefault();
+  //           }
+  //         } else if (e.currentTarget.classList.contains(`not-adaptive`) && e.currentTarget.classList.contains(`eng`)) {
+  //           const mobileConfirm = confirm(`The site you are trying to visit is not mobile friendly. Click ok to go`);
+  //           if (mobileConfirm == false) {
+  //             e.preventDefault();
+  //           }
+  //         }
+  //         return false;
+  //       });
+  //     });
+  //   }
   //
   new Swiper(".swiper", {
     // Optional parameters
-    loop: false,
+    loop: true,
 
     // If we need pagination
     pagination: {
