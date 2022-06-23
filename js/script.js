@@ -164,6 +164,7 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
   if (document.documentElement.clientWidth < 767) {
     document.querySelectorAll("section.portfolio a img").forEach((link) => {
       link.addEventListener(`click`, (e) => {
+        e.preventDefault();
         if (e.target.classList.contains(`not-adaptive`) && e.target.getAttribute(`data-lang`) == `ru`) {
           const mobileConfirm = confirm(`Сайт, который вы пытаетесь посетить, не оптимизирован для мобильных устройств. Нажмите ОК, чтобы перейти`);
           if (mobileConfirm == false) {
