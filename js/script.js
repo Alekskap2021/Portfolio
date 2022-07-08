@@ -161,64 +161,19 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
   //
 
   //Confirm about not adaptive on mob
-  //   if (document.documentElement.clientWidth < 767) {
-  //     document.querySelectorAll("section.portfolio a").forEach((link) => {
-  //       link.addEventListener(`click`, (e) => {
-  //         if (e.currentTarget.classList.contains(`not-adaptive`) && e.currentTarget.classList.contains(`ru`)) {
-  //           const mobileConfirm = confirm(`Сайт, который вы пытаетесь посетить, не оптимизирован для мобильных устройств. Нажмите ОК, чтобы перейти`);
-  //           if (mobileConfirm == false) {
-  //             e.preventDefault();
-  //           }
-  //         } else if (e.currentTarget.classList.contains(`not-adaptive`) && e.currentTarget.classList.contains(`eng`)) {
-  //           const mobileConfirm = confirm(`The site you are trying to visit is not mobile friendly. Click ok to go`);
-  //           if (mobileConfirm == false) {
-  //             e.preventDefault();
-  //           }
-  //         }
-  //         return false;
-  //       });
-  //     });
-  //   }
-  //
-  new Swiper(".swiper", {
-    // Optional parameters
-    loop: true,
-
-    // If we need pagination
-    pagination: {
-      el: ".swiper-pagination",
-      type: `bullets`,
-      dynamicBullets: true,
-    },
-
-    // Navigation arrows
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
-  //
-  //window.pageYOffset - сколько прокрутили сверху
-  //document.documentElement.clientHeight - высота клиента
-  // document.documentElement.scrollHeight - высота всей страницы
-  //getBoundingClientRect().y - высота элемента до верха клиента
-  const ico = document.querySelector(`.slide-ico`);
-  const timer = setInterval(() => {
-    animate();
-  }, 900);
-  function animate() {
-    if (window.getComputedStyle(ico).left == `30px`) {
-      ico.style.cssText = `
-      left: 150px;
-    transition: all 0.5s ease;
-      opacity: 0;
-      `;
-    } else if (window.getComputedStyle(ico).left == `150px`) {
-      ico.style.cssText = `
-      left: 30px;
-      transition: opacity 0.5s ease;
-      opacity: 1;
-      `;
-    }
+  if (document.documentElement.clientWidth < 767) {
+    document.querySelectorAll("section.portfolio .portfolio-work a.not-adaptive").forEach((link) => {
+      link.addEventListener(`click`, (e) => {
+        link.classList.contains(`ru`)
+          ? confirm(`Сайт, который вы пытаетесь посетить, не оптимизирован для мобильных устройств. Нажмите ОК, чтобы перейти`)
+            ? true
+            : e.preventDefault()
+          : confirm(`The site you are trying to visit is not mobile friendly. Click ok to go`)
+          ? true
+          : e.preventDefault();
+      });
+      console.log(link);
+    });
   }
 });
+//
