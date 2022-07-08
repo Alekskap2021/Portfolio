@@ -110,11 +110,11 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
       }
     }
 
-    new skillsCard("img/icons/jsps.png", "JS", "JavaScript", ".skills .skills-wrapper").render(3);
-    new skillsCard("img/icons/reactps.png", "React", "React JS", ".skills .skills-wrapper").render(1);
-    new skillsCard("img/icons/htmlps.png", "html", "HTML", ".skills .skills-wrapper").render(4);
+    new skillsCard("img/icons/jsps.png", "JS", "JavaScript", ".skills .skills-wrapper").render(4);
+    new skillsCard("img/icons/reactps.png", "React", "React JS", ".skills .skills-wrapper").render(3);
+    new skillsCard("img/icons/htmlps.png", "html", "HTML", ".skills .skills-wrapper").render(5);
     new skillsCard("img/icons/cssps.png", "css", "CSS", ".skills .skills-wrapper").render(4);
-    new skillsCard("img/icons/bootstrap.png", "bootstrap", "Bootstrap", ".skills .skills-wrapper").render(3);
+    new skillsCard("img/icons/bootstrap.png", "bootstrap", "Bootstrap", ".skills .skills-wrapper").render(4);
     new skillsCard("img/icons/vue.png", "vue", "Vue JS", ".skills .skills-wrapper").render(2);
     new skillsCard("img/icons/git.png", "git", "Git", ".skills .skills-wrapper").render(3);
     new skillsCard("img/icons/sass.png", "sass", "Sass/Scss", ".skills .skills-wrapper").render(4);
