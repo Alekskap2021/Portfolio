@@ -9,7 +9,10 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 
     window.addEventListener(`scroll`, () => {
       if (window.pageYOffset > 0) {
-        menu.style.setProperty(`--transform-menu-divider`, `scaleX(${(clientW / menuW).toFixed(3)})`);
+        menu.style.setProperty(
+          `--transform-menu-divider`,
+          `scaleX(${(clientW / menuW).toFixed(3)})`
+        );
       } else {
         menu.style.setProperty(`--transform-menu-divider`, `scaleX(1)`);
       }
@@ -43,7 +46,10 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 
       sections.forEach((section) => {
         //switch active class on link
-        if (section.getBoundingClientRect().y - menu <= 0 || clientH + scrollTop >= scrollH - footerH) {
+        if (
+          section.getBoundingClientRect().y - menu <= 0 ||
+          clientH + scrollTop >= scrollH - footerH
+        ) {
           document.querySelectorAll(".nav-menu .menu-list a").forEach((link) => {
             link.classList.remove(`active`);
             if (section.getAttribute(`id`) == link.getAttribute(`data`)) {
@@ -111,10 +117,17 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
     }
 
     new skillsCard("img/icons/jsps.png", "JS", "JavaScript", ".skills .skills-wrapper").render(3);
-    new skillsCard("img/icons/reactps.png", "React", "React JS", ".skills .skills-wrapper").render(3);
+    new skillsCard("img/icons/reactps.png", "React", "React JS", ".skills .skills-wrapper").render(
+      3
+    );
     new skillsCard("img/icons/htmlps.png", "html", "HTML", ".skills .skills-wrapper").render(4);
     new skillsCard("img/icons/cssps.png", "css", "CSS", ".skills .skills-wrapper").render(4);
-    new skillsCard("img/icons/bootstrap.png", "bootstrap", "Bootstrap", ".skills .skills-wrapper").render(4);
+    new skillsCard(
+      "img/icons/bootstrap.png",
+      "bootstrap",
+      "Bootstrap",
+      ".skills .skills-wrapper"
+    ).render(4);
     new skillsCard("img/icons/vue.png", "vue", "Vue JS", ".skills .skills-wrapper").render(2);
     new skillsCard("img/icons/git.png", "git", "Git", ".skills .skills-wrapper").render(3);
     new skillsCard("img/icons/sass.png", "sass", "Sass/Scss", ".skills .skills-wrapper").render(4);
@@ -162,18 +175,22 @@ window.addEventListener(`DOMContentLoaded`, (e) => {
 
   //Confirm about not adaptive on mob
   if (document.documentElement.clientWidth < 767) {
-    document.querySelectorAll("section.portfolio .portfolio-work a.not-adaptive").forEach((link) => {
-      link.addEventListener(`click`, (e) => {
-        link.classList.contains(`ru`)
-          ? confirm(`Сайт, который вы пытаетесь посетить, не оптимизирован для мобильных устройств. Нажмите ОК, чтобы перейти`)
+    document
+      .querySelectorAll("section.portfolio .portfolio-work a.not-adaptive")
+      .forEach((link) => {
+        link.addEventListener(`click`, (e) => {
+          link.classList.contains(`ru`)
+            ? confirm(
+                `Сайт, который вы пытаетесь посетить, не оптимизирован для мобильных устройств. Нажмите ОК, чтобы перейти`
+              )
+              ? true
+              : e.preventDefault()
+            : confirm(`The site you are trying to visit is not mobile friendly. Click ok to go`)
             ? true
-            : e.preventDefault()
-          : confirm(`The site you are trying to visit is not mobile friendly. Click ok to go`)
-          ? true
-          : e.preventDefault();
+            : e.preventDefault();
+        });
+        console.log(link);
       });
-      console.log(link);
-    });
   }
 });
 //
